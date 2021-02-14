@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>XUnit test Fact method</Title>
+			<Shortcut>fct</Shortcut>
+			<Description>Generates a [Fact] xUnit test method</Description>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+				<![CDATA[
+				[Fact]
+				public void $TestName$Test()
+				{
+					/*$TestDescription$*/
+					Assert.$method$($content$);
+				}
+				]]>
+			</Code>
+			<Declarations>
+				<Literal>
+				  <ID>TestName</ID>
+				  <ToolTip>Test Name</ToolTip>
+				  <Default>name</Default>
+				</Literal>
+				<Literal>
+				  <ID>TestDescription</ID>
+				  <ToolTip>Test Description</ToolTip>
+				  <Default>Description</Default>
+				</Literal>
+				<Literal>
+				  <ID>method</ID>
+				  <ToolTip>Assertion Method</ToolTip>
+				  <Default>method</Default>
+				</Literal>
+				<Literal>
+				  <ID>content</ID>
+				  <ToolTip>Logical assertion</ToolTip>
+				  <Default>logical</Default>
+				</Literal>
+			</Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
