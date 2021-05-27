@@ -1,24 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>xUnit Fact Method</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
       <Shortcut>fct</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
     </Header>
     <Snippet>
-      <Code Language="CSharp">
-        <![CDATA[[Fact]
-        public void $MethodName$_test() {
-          //Arrange
+      <Code Language="csharp" Delimiter="$"><![CDATA[[Fact]
+public void $MethodName$_test() {
+    //Arrange
           
-          //Act
+    //Act
           
-          //Assert
-        }]]>
-      </Code>
+    //Assert
+
+}]]></Code>
       <Imports>
         <Import>
-            <Namespace>System.IO</Namespace>
+          <Namespace>System.IO</Namespace>
         </Import>
         <Import>
           <Namespace>Xunit</Namespace>
@@ -28,11 +36,13 @@
         </Import>
       </Imports>
       <Declarations>
-      <Literal>
-        <ID>MethodName</ID>
-        <ToolTip>MethodName</ToolTip>
-        <Default>TestMethodName</Default>
-      </Literal>
+        <Literal Editable="true">
+          <ID>MethodName</ID>
+          <ToolTip>MethodName</ToolTip>
+          <Default>TestMethodName</Default>
+          <Function>
+          </Function>
+        </Literal>
       </Declarations>
     </Snippet>
   </CodeSnippet>

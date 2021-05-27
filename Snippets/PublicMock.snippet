@@ -5,33 +5,32 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>Private readonly</Title>
+      <Title>Public Mock</Title>
       <Author>
       </Author>
       <Description>
       </Description>
       <HelpUrl>
       </HelpUrl>
-      <Shortcut>prr</Shortcut>
+      <Shortcut>pmoc</Shortcut>
     </Header>
     <Snippet>
       <Declarations>
         <Literal Editable="true">
-          <ID>type</ID>
-          <ToolTip>type</ToolTip>
-          <Default>type</Default>
-          <Function>
-          </Function>
-        </Literal>
-        <Literal Editable="true">
           <ID>name</ID>
           <ToolTip>name</ToolTip>
           <Default>name</Default>
+          <Function>i =&gt; i.ToUpper();</Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>interface</ID>
+          <ToolTip>interface</ToolTip>
+          <Default>interface</Default>
           <Function>
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="csharp" Delimiter="$"><![CDATA[private readonly $type$ _$name$;$end$]]></Code>
+      <Code Language="csharp" Delimiter="$"><![CDATA[public Mock<$interface$> $name$ { get; set; }$end$]]></Code>
       <Imports>
         <Import>
           <Namespace>System.IO</Namespace>
