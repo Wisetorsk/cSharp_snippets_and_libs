@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Controller Theory Test</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ctrlth</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MethodName</ID>
+          <ToolTip>Test Method Name</ToolTip>
+          <Default>Method</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[[Theory]
+[AutoDataWithLogging]
+public async Task $MethodName$_ControllerTest(ILoggerFactory factory)
+{
+    var controller = GetController(factory);
+    var actionResult = await controller.Get("ABC");
+    Assert.IsAssignableFrom<ActionResult>(actionResult);
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

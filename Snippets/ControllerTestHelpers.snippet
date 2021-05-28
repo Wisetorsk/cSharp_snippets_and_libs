@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ControllerTestHelpers</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ctrltesthelp</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ControllerName</ID>
+          <ToolTip>ControllerName</ToolTip>
+          <Default>ControllerName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[#region Hjelpemetoder
+
+private $ControllerName$ GetController(ILoggerFactory factory)
+{
+    var log = new Logger<$ControllerName$>(factory);
+    var claimsPrincipal = GetClaimsPrincipal(_apiKey, new Guid());
+    return new $ControllerName$(_logger.Object, _handler.Object, _accessControl.Object)
+    {
+        Url = _urlHelper.Object,
+        ControllerContext = new ControllerContext { HttpContext = new DefaultHttpContext { User = claimsPrincipal } }
+    };
+}
+
+private static ClaimsPrincipal GetClaimsPrincipal(Guid kundeId, Guid brukerId)
+{
+    var claims = new List<Claim>()
+    {
+        new Claim(ClaimTypes.Name, "username"),
+        new Claim(ClaimTypes.NameIdentifier, "userId"),
+        new Claim("name", "John Doe"),
+
+    };
+
+    var identity = new ClaimsIdentity(claims, "TestAuthType");
+    var claimsPrincipal = new ClaimsPrincipal(identity);
+
+    return claimsPrincipal;
+}
+
+#endregion $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
